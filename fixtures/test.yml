@@ -1,0 +1,8 @@
+- name: test_implementation
+  description: a test query/threshold
+  promql: sum(max_over_time(unhealthy{source_id="test"}[20m]))
+  thresholds:
+  - eq: 1
+    level: warning
+  - gt: 1
+    level: critical
